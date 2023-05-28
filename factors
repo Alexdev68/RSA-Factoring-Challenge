@@ -1,0 +1,22 @@
+#!/usr/bin/python3
+from sys import argv
+filename = argv[1]
+divi = [2, 3, 5, 7, 15485773]
+
+with open(filename, 'r') as file1:
+    lines = file1.readlines()
+
+for line in lines:
+    big_num = int(line.strip())
+    dub = []
+
+    for i in divi:
+        if big_num % i == 0:
+            num1 = big_num // i
+            num2 = i
+            dub.append(big_num)
+
+            if len(dub) > 1:
+                continue
+
+            print(f"{big_num}={num1}*{num2}")
